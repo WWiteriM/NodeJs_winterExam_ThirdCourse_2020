@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script>
+        async function notify() {
+            let response = await fetch('http://localhost:3000/');
+            if (response.ok) {
+                let result = await response.text();
+                alert(result);
+                document.write(`<h1>${result}</h1>`);
+            } else {
+                alert("Ошибка HTTP: " + response.status);
+            }
+        }
+    </script>
+</head>
+
+<body>
+<button onclick="notify()" style="height: 50px; width: 120px;"/>
+</body>
+</html>

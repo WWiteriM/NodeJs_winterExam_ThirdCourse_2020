@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script>
+        let xhr = new XMLHttpRequest();
+
+        function notify() {
+            xhr.open('GET', 'http://localhost:3000/', true);
+            xhr.send();
+            xhr.onload = () => {
+                if (xhr.status !== 200) {
+                    alert(xhr.status + ':' + xhr.statusText);
+                } else {
+                    alert(xhr.status + ':' + xhr.statusText);
+                    document.write(`<h1>${xhr.response}</h1>`);
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<button onclick="notify()" style="height: 50px; width: 120px;"/>
+</body>
+</html>

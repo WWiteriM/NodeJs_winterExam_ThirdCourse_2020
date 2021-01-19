@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            const END_POINT = "http://localhost:3000/";
+            let settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": END_POINT,
+                "method": "GET"
+            };
+            $.ajax(settings).done(response => {
+                $("#full-name").text(response);
+            }).then(() => {
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="full-name"></div>
+</body>
+</html>

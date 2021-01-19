@@ -1,0 +1,15 @@
+go
+CREATE procedure COUNT_FACULTY
+	@FACULTY NVARCHAR(40), 
+	@count int OUTPUT
+as begin
+	select @count = COUNT(*) from FACULTY where FACULTY.FACULTY = @FACULTY
+end;
+
+go
+declare @count int
+declare @FACULTY NVARCHAR(40)
+set @FACULTY = N'ХТиТ'
+EXECUTE COUNT_FACULTY @FACULTY,  @count OUTPUT
+PRINT CONVERT(VARCHAR, @count)
+

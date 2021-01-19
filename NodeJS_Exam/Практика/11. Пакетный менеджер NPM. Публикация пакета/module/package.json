@@ -1,0 +1,11 @@
+{
+  "name": "my-mai-module",
+  "version": "1.0.0",
+  "description": "my MAI module",
+  "main": "myMAImodule.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nodejs_mai",
+  "license": "ISC"
+}
